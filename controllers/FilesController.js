@@ -1,10 +1,10 @@
-import { v4 as uuidv4 } from 'uuid';
-import { promises as fs } from 'fs';
-import { ObjectID } from 'mongodb';
-import mime from 'mime-types';
-import Queue from 'bull';
-import dbClient from '../utils/db';
-import redisClient from '../utils/redis';
+const { v4: uuidv4 } = require('uuid');
+const { promises: fs } = require('fs');
+const { ObjectID } = require('mongodb');
+const mime = require('mime-types');
+const Queue = require('bull');
+const dbClient = require('../utils/db');
+const redisClient = require('../utils/redis');
 
 const fileQueue = new Queue('fileQueue', 'redis://127.0.0.1:6379');
 
