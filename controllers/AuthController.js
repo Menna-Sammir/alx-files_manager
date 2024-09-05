@@ -27,7 +27,7 @@ class AuthController {
         } else {
           response.status(401).json({ error: 'Unauthorized' });
         }
-      }
+      },
     );
   }
 
