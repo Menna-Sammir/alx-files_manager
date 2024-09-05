@@ -7,16 +7,13 @@ import dbClient from '../utils/db';
 import redisClient from '../utils/redis';
 
 const fileQueue = new Queue('fileQueue',
-{
-  redis:{
-    host: process.env.REDIS_HOST || '127.0.0.1:6379',
-    port: process.env.REDIS_PORT || 6379,
-  }
+  {
+    redis: {
+      host: process.env.REDIS_HOST || '127.0.0.1:6379',
+      port: process.env.REDIS_PORT || 6379,
+    },
 
-}
-
-
-)
+  });
 class FilesController {
   static async getUser(request) {
     const token = request.header('X-Token');
@@ -194,7 +191,6 @@ class FilesController {
     });
     return null;
   }
-
 
   static async getFile(request, response) {
     const { id } = request.params;

@@ -1,8 +1,9 @@
-const redisClient = require('../utils/redis');
-const dbClient = require('../utils/db');
 import sha1 from 'sha1';
 
 import { v4 as uuidv4 } from 'uuid';
+
+const redisClient = require('../utils/redis');
+const dbClient = require('../utils/db');
 
 class AuthController {
   static async getConnect(request, response) {
@@ -28,7 +29,7 @@ class AuthController {
         } else {
           response.status(401).json({ error: 'Unauthorized' });
         }
-      }
+      },
     );
   }
 
